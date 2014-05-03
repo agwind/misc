@@ -23,7 +23,7 @@ my $count=0;
 my $filename = $ARGV[0];
 
 if ( !-f $filename ) {
-	die "./import.pl <file>\n";
+	die "./$0 <file>\n";
 }
 
 open( my $fh, '<', $filename ) or die "Can't open file: $filename";
