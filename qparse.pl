@@ -28,11 +28,11 @@ if ( !-f $filename ) {
 
 open( my $fh, '<', $filename ) or die "Can't open file: $filename";
 
-my $connection = qpid::messaging::Connection( $url, $connectionOptions )->new();
+my $connection = qpid::messaging::Connection->new( $url, $connectionOptions );
 $connection->open();
 my $session = $connection->create_session();
 my $sender  = $session->create_sender($address);
-my $message = qpid::messaging::Message()->new();
+my $message = qpid::messaging::Message->new();
 
 my $start_time = [gettimeofday];
 
